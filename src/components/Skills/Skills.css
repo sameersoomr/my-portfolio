@@ -1,0 +1,27 @@
+.skills-tab {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.coder-image {
+  max-width: 350px;
+  height: auto;
+  margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .coder-image {
+      display: none;
+  }
+}
+
+.skills-card {
+  flex: 1;
+  max-width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
