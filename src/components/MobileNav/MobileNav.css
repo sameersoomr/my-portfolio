@@ -1,76 +1,84 @@
-/* Mobile menu default state */
 .mobile-menu {
   position: fixed;
   top: 0;
-  right: -100%; /* Hidden by default */
+  right: -100%;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(20px);
   z-index: 40;
   transition: all 0.3s ease;
-  overflow-y: auto; /* Enable vertical scroll */
-  padding-right: 10px; /* Prevent horizontal scrollbar */
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
-/* Mobile menu when active */
 .mobile-menu.active {
-  right: 0; /* Slide in when active */
+  right: 0;
 }
 
-/* Close button styling */
-/* Button87.css */
 .close-btn {
-  margin: 35px;
-  padding: 10px 20px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  border-radius: 10px;
-  display: block;
-  border: 0px;
-  font-weight: 700;
-  box-shadow: 0px 0px 14px -7px #011c1d;
-  background-image: linear-gradient(45deg, #167c80 0%, #0f5355 51%, #0f5355 100%);
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
   cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  outline: none;
+  padding: 0;
+  margin: 2rem;
+  transition: transform 0.3s ease;
 }
 
-.close-btn:hover {
-  background-position: right center;
-  /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
+.close-btn::before,
+.close-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.3rem;
+  background-color: #167c80;
+  border-radius: 0.1rem;
+  transition: all 0.3s ease;
 }
+
+.close-btn::before {
+  transform: rotate(45deg);
+}
+
+.close-btn::after {
+  transform: rotate(-45deg);
+}
+
+
+.close-btn:hover::before,
+.close-btn:hover::after {
+  background-color: #167c80;
+}
+
 
 .close-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.9);
 }
 
 
-/* Mobile menu container */
 .mobile-menu-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
-  overflow-y: auto; /* Ensure the container is scrollable */
-  max-height: 100vh; /* Prevents content from overflowing the screen */
+  padding: 4rem;
+  overflow-y: auto;
+  max-height: 100vh;
   justify-content: flex-start;
-  flex-grow: 1; /* Ensure it takes up the full height */
+  flex-grow: 1;
 }
 
-/* Logo styling */
 .mobile-menu-container .logo {
-  width: 8rem;
+  width: 7rem;
   margin-bottom: 2rem;
-  object-fit: contain; /* Ensure logo is well-fit */
+  object-fit: contain;
 }
 
-/* List styling */
 .mobile-menu-container ul {
   list-style: none;
   padding: 0;
@@ -79,47 +87,41 @@
   text-align: center;
 }
 
-/* List item styling */
 .mobile-menu-container li {
-  margin: 1.5rem 0; /* Increased space between items */
+  margin: 1.5rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Menu item styling */
 .menu-item {
   display: flex;
-  align-items: center; /* Align the icon and text */
+  align-items: center;
   text-decoration: none;
-  font-size: 1.6rem; /* Slightly bigger font size */
+  font-size: 1.6rem;
   font-weight: 500;
   color: #fff;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-/* Instagram icon styling */
 .menu-icon {
   width: 2.4rem;
   height: 2.4rem;
-  margin-right: 1rem; /* Space between the icon and the text */
+  margin-right: 1rem;
   object-fit: contain;
 }
 
-/* Instagram text styling */
 .menu-text {
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.5px;
 }
 
-/* Hover effect for menu items */
 .menu-item:hover {
   color: #167c80;
 }
 
-/* Contact button styling */
 .contact-btn {
   font-size: 1.3rem;
   font-weight: 500;
@@ -137,7 +139,6 @@
   background-color: #0f5355;
 }
 
-/* Contact form container */
 .contact-form-container {
   background: rgba(0, 0, 0, 0.95);
   padding: 2rem;
@@ -149,7 +150,6 @@
   animation: slideIn 0.3s ease-in-out;
 }
 
-/* Contact form slide-in animation */
 @keyframes slideIn {
   from {
     transform: translateY(20px);
@@ -161,9 +161,8 @@
   }
 }
 
-/* Contact form close button */
 .close-contact-form-btn {
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 0.8rem;
   background-color: #167c80;
   color: white;
@@ -178,7 +177,6 @@
   background-color: #0f5355;
 }
 
-/* Contact form inputs */
 .contact-form-container input,
 .contact-form-container textarea {
   width: 100%;
@@ -192,13 +190,11 @@
   color: #fff;
 }
 
-/* Focus state for form inputs */
 .contact-form-container input:focus,
 .contact-form-container textarea:focus {
   border-color: #0f5355;
 }
 
-/* Submit button inside the form */
 .contact-form-container .submit-btn {
   width: 100%;
   padding: 0.8rem;
